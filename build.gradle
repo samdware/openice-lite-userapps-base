@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+wrapper {
+    gradleVersion = '4.8'
+}
+
+defaultTasks 'build'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// TODO: Update the main class if needed
+mainClassName = "App"
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+    jcenter()
+
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    // OpenICE-lite Core
+    implementation 'com.github.samdware:openice-lite:v0.1.4'
+
+    // TODO: Add OpenICE-lite dependencies as needed. Below are some examples:
+    //implementation 'com.github.samdware:openice-lite-iomt-masimo-rad8:v0.1.4'
+    //implementation 'com.github.samdware:openice-lite-iomt-draeger-fabius:v0.1.4
+}
